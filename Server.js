@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 4000;
 app.use(express.json());
 //Only give backend access to this frontend
 app.use(cors({
-    origin: [" http://localhost:3000", "https://dockit-app.com"]
+    origin: [" http://localhost:3000", "https://dockit-app.onrender.com"]
 }));
 
 mongoose
