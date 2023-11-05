@@ -1,6 +1,6 @@
 const express = require('express');
 const routes = require('./routes/TaskRoute');
-const db = require('./database/database');
+import { db } from './database/database.js';
 const cors = require('cors');
 const mongoose = require('mongoose');
 const app = express();
