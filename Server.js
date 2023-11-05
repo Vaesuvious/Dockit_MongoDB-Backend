@@ -1,9 +1,10 @@
 const express = require('express');
-const routes = require('./routes/TaskRoute');
-import { db } from './database/database.js';
 const cors = require('cors');
 const mongoose = require('mongoose');
+require('dotenv').config();
 const app = express();
+
+const routes = require('./routes/TaskRoute');
 const PORT = process.env.PORT || 4000;
 
 //Middleware
@@ -16,7 +17,11 @@ app.use(cors({
 
 app.use('/api', routes);
 
-//db();
+mongoose
+.connect(process.env.MONGODB_URI)
+.then(() => console.log('Mongodb connected!'))
+.catch((err) => console.log(err));
+
 app.listen(PORT, () => console.log(`Listening on: ${PORT}`));
 
 
