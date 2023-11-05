@@ -12,7 +12,7 @@ app.use(express.json());
 
 //Only give backend access to this frontend
 app.use(cors({
-    origin: [" http://localhost:7000", "https://dockit-app.onrender.com"]
+    origin: [" http://localhost:3000", "https://dockit-app.onrender.com"]
 }));
 
 app.use('/api', routes);
