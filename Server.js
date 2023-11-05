@@ -3,6 +3,7 @@ const routes = require('./routes/TaskRoute');
 const app = express();
 const db = require('./database/database');
 const cors = require('cors');
+const mongoose = require('mongoose');
 
 const PORT = process.env.PORT || 4000;
 
@@ -15,11 +16,11 @@ app.use(cors({
 }));
 
 app.use('/api', routes);
-
+/*
 db();
 app.listen(PORT, () => console.log(`Listening on: ${PORT}`));
+*/
 
-/*
 const startServer = async () =>{
     try{
         await db();
@@ -31,4 +32,3 @@ const startServer = async () =>{
     }
 };
 startServer();
-*/
