@@ -1,9 +1,10 @@
 const express = require('express');
 const cors = require('cors');
-const db = require('./database/database');
+//const db = require('./database/database');
 const routes = require('./routes/TaskRoute');
 const app = express();
 const PORT = process.env.PORT || 4000;
+import db from './database/database';
 
 //Middleware
 app.use(express.json());
