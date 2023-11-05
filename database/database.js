@@ -16,7 +16,7 @@ require('dotenv').config()
 }*/
 
 //connect to mongodb database
-const db = await mongoose
+const db = mongoose
 .connect(process.env.MONGODB_URI)
 .then(()=> console.log(`MongoDB connected!`))
 .catch((err) => console.log(err));
