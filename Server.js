@@ -16,7 +16,7 @@ app.use(cors({
 
 app.use('/api', routes);
 
-db();
+//db();
 app.listen(PORT, () => console.log(`Listening on: ${PORT}`));
 
 
