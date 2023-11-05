@@ -1,10 +1,8 @@
 const express = require('express');
 const cors = require('cors');
-//const db = require('./database/database');
 const routes = require('./routes/TaskRoute');
 const app = express();
 const PORT = process.env.PORT || 4000;
-import db from './database/database';
 
 //Middleware
 app.use(express.json());
@@ -16,7 +14,9 @@ app.use(cors({
 
 app.use('/api', routes);
 
-const startServer = async () =>{
+app.listen(PORT, () => console.log(`Listening on: ${PORT}`));
+
+/*const startServer = async () =>{
     try{
         await db();
         app.listen(PORT, () =>{ 
@@ -27,3 +27,4 @@ const startServer = async () =>{
     }
 };
 startServer();
+*/
